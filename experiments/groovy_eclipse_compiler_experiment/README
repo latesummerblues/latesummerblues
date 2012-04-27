@@ -1,0 +1,6 @@
+Project was generated with the following command (and with some tweaking afterward of groovy version, package structure fixes etc.) 
+
+mvn archetype:generate -DarchetypeGroupId=org.codehaus.groovy 
+	-DarchetypeArtifactId=groovy-eclipse-quickstart 
+	-DarchetypeVersion=2.5.2-SNAPSHOT 
+	-DarchetypeRepository=https://nexus.codehaus.org/content/repositories/snapshots/
