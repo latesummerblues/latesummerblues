@@ -7,8 +7,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>latesummerblues</groupId>
-	<artifactId>experiments</artifactId>
+	<artifactId>gmaven_experiments</artifactId>
 	<name>experiments project</name>
+	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
 
 	<dependencies>
@@ -20,7 +21,14 @@
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
-			<version>1.8.6</version>
+			<version>1.8.5</version>
+			<!-- <version>1.7.2</version> -->
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>1.8.5</version>
+			<!-- <version>1.7.2</version> -->
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -38,7 +46,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<!-- <executable>${JAVA_HOME}/bin/javac</executable>  -->
+					<!-- <executable>${JAVA_HOME}/bin/javac</executable> -->
 					<source>1.7</source>
 					<target>1.7</target>
 				</configuration>
@@ -48,14 +56,32 @@
 				<groupId>org.codehaus.gmaven</groupId>
 				<artifactId>gmaven-plugin</artifactId>
 				<version>1.4</version>
-				<!-- <dependencies> <dependency> <groupId>org.codehaus.maven.runtime</groupId> 
-					<artifactId>gmaven-runtime-1.8</artifactId> <version>1.4</version> <exclusions> 
-					<exclusion> <groupId>org.codehaus.groovy</groupId> <artifactId>groovy-all</artifactId> 
-					</exclusion> </exclusions> </dependency> <dependency> <groupId>groovy</groupId> 
-					<artifactId>groovy-all</artifactId> <version>1.8.6</version> </dependency> 
-					</dependencies> -->
+				<dependencies>
+				<!-- 
+					<dependency>
+						<groupId>org.codehaus.maven.runtime</groupId>
+						<artifactId>gmaven-runtime-1.8</artifactId>
+						<version>1.4</version>
+						<exclusions>
+							<exclusion>
+								<groupId>org.codehaus.groovy</groupId>
+								<artifactId>groovy-all</artifactId>
+							</exclusion>
+						</exclusions>
+					</dependency>
+					 -->
+					<dependency>
+						<groupId>org.codehaus.groovy</groupId>
+						<artifactId>groovy-all</artifactId>
+						<version>1.8.5</version>
+					</dependency>
+				</dependencies>
 				<configuration>
 					<providerSelection>1.8</providerSelection>
+					<debug>true</debug>
+					<verbose>true</verbose>
+					<stacktrace>true</stacktrace>
+					<defaultScriptExtension>.groovy</defaultScriptExtension>
 				</configuration>
 				<executions>
 					<execution>
@@ -76,10 +102,18 @@
 				<dependencies>
 					<dependency>
 						<groupId>org.apache.maven.surefire</groupId>
-						<artifactId>surefire-junit48</artifactId>
-						<!--  <version>2.12</version>  -->
+						<artifactId>surefire-junit4</artifactId>
+						<version>2.12</version>
+					</dependency>
+					<dependency>
+						<groupId>org.codehaus.groovy</groupId>
+						<artifactId>groovy-all</artifactId>
+						<version>1.8.5</version>
 					</dependency>
 				</dependencies>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
 			</plugin>
 
 		</plugins>

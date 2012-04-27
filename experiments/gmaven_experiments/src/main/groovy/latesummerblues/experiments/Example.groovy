@@ -10,6 +10,12 @@ package latesummerblues.experiments
 class Example
 {
     def show() {
-        println 'Hello World'
+        println 'Hello World!!'
     }
+	
+	public static main(args) {
+
+		new Example().show()	
+	}
+
 }
